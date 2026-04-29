@@ -1,0 +1,194 @@
+/* postdrome — landing page styles
+   Clinical-warm. Photophobia-safe (no electric blue, no neon).
+   Matches Theme.swift accent (#4A6B7A) so the site feels like the app. */
+
+:root {
+  --bg: #fafaf7;
+  --surface: #ffffff;
+  --text: #1a1a1a;
+  --text-secondary: #5c5c58;
+  --text-tertiary: #8c8c88;
+  --accent: #4a6b7a;
+  --accent-soft: #e6edf1;
+  --divider: #e5e5e0;
+  --success: #5c8a6a;
+  --warning: #b8862e;
+  --danger: #b54530;
+  --max-width: 960px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0f0f0e;
+    --surface: #1a1a18;
+    --text: #f2f2ef;
+    --text-secondary: #9a9a96;
+    --text-tertiary: #6e6e6a;
+    --accent: #7a95a4;
+    --accent-soft: #1f2a30;
+    --divider: #2a2a28;
+  }
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 17px; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { max-width: var(--max-width); margin: 0 auto; padding: 0 24px; }
+
+/* Hero */
+.hero {
+  padding: 24px 0 96px;
+  background: linear-gradient(180deg, var(--bg) 0%, var(--accent-soft) 100%);
+}
+.hero nav {
+  display: flex; justify-content: space-between; align-items: center;
+  max-width: var(--max-width); margin: 0 auto; padding: 0 24px 64px;
+}
+.hero .logo {
+  font-size: 22px; font-weight: 700; letter-spacing: -0.02em;
+}
+.hero .nav-links a {
+  margin-left: 24px; color: var(--text-secondary); font-size: 15px;
+}
+.hero-content {
+  max-width: var(--max-width); margin: 0 auto; padding: 0 24px;
+  text-align: center;
+}
+.eyebrow {
+  font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+  color: var(--text-secondary); margin-bottom: 24px;
+}
+.hero h1 {
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 800; line-height: 1.05; letter-spacing: -0.03em;
+  margin-bottom: 24px;
+}
+.hero h1 em {
+  font-style: italic; color: var(--accent);
+}
+.subhead {
+  font-size: 19px; color: var(--text-secondary);
+  max-width: 640px; margin: 0 auto 40px;
+}
+.cta-primary {
+  display: inline-block; padding: 14px 32px;
+  background: var(--accent); color: white;
+  border-radius: 12px; font-weight: 600; font-size: 17px;
+}
+.cta-primary.disabled {
+  background: var(--text-tertiary); cursor: not-allowed;
+}
+.cta-note {
+  margin-top: 16px; font-size: 14px; color: var(--text-tertiary);
+}
+
+/* Trust pills */
+.trust-pills {
+  background: var(--surface); border-top: 1px solid var(--divider);
+  border-bottom: 1px solid var(--divider); padding: 32px 0;
+}
+.trust-pills ul {
+  list-style: none; display: flex; flex-wrap: wrap; gap: 12px; justify-content: center;
+}
+.trust-pills li {
+  background: var(--accent-soft); padding: 8px 16px; border-radius: 999px;
+  font-size: 14px; color: var(--text-secondary);
+}
+.trust-pills strong { color: var(--text); font-weight: 600; }
+
+/* How / pricing sections */
+.how, .pricing { padding: 96px 0; }
+.how h2, .pricing h2 {
+  font-size: 36px; font-weight: 700; letter-spacing: -0.02em;
+  text-align: center; margin-bottom: 16px;
+}
+.pricing-subtitle {
+  text-align: center; color: var(--text-secondary); font-size: 17px;
+  max-width: 640px; margin: 0 auto 56px;
+}
+.how-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;
+  margin-top: 48px;
+}
+.how-item {
+  background: var(--surface); padding: 28px; border-radius: 16px;
+  border: 1px solid var(--divider);
+}
+.how-item h3 {
+  font-size: 19px; font-weight: 700; margin-bottom: 12px;
+}
+.how-item p { color: var(--text-secondary); font-size: 15px; line-height: 1.6; }
+
+/* Pricing tiers */
+.pricing { background: var(--accent-soft); }
+.pricing-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px; max-width: 720px; margin: 0 auto;
+}
+.tier {
+  background: var(--surface); padding: 32px; border-radius: 16px;
+  border: 1px solid var(--divider);
+}
+.tier.highlight {
+  border-color: var(--accent); border-width: 2px;
+}
+.tier h3 { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+.tier .price {
+  font-size: 28px; font-weight: 800; color: var(--accent);
+  margin-bottom: 24px;
+}
+.tier ul { list-style: none; }
+.tier li {
+  padding: 8px 0; font-size: 15px; color: var(--text-secondary);
+  border-bottom: 1px solid var(--divider);
+}
+.tier li:last-child { border-bottom: none; }
+.tier li::before { content: "✓ "; color: var(--success); margin-right: 4px; }
+
+/* Health disclaimer — important enough to be its own block */
+.health-disclaimer {
+  background: var(--bg); border-top: 1px solid var(--divider); padding: 48px 0;
+}
+.health-disclaimer p {
+  max-width: 720px; margin: 0 auto;
+  font-size: 14px; color: var(--text-secondary); line-height: 1.6;
+}
+.health-disclaimer strong { color: var(--text); }
+
+/* Footer */
+footer {
+  background: var(--surface); border-top: 1px solid var(--divider); padding: 56px 0 32px;
+  font-size: 14px; color: var(--text-secondary);
+}
+.footer-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 32px; margin-bottom: 32px;
+}
+.footer-grid p.logo { font-size: 17px; font-weight: 700; color: var(--text); margin-bottom: 8px; }
+.footer-grid a { display: block; padding: 4px 0; color: var(--text-secondary); }
+.copyright {
+  border-top: 1px solid var(--divider); padding-top: 24px; text-align: center;
+  font-size: 13px; color: var(--text-tertiary);
+}
+
+/* Legal page styles */
+.legal {
+  max-width: 720px; margin: 64px auto; padding: 0 24px;
+}
+.legal h1 { font-size: 36px; font-weight: 700; margin-bottom: 24px; }
+.legal h2 { font-size: 22px; font-weight: 700; margin: 32px 0 16px; }
+.legal p { margin-bottom: 16px; line-height: 1.7; color: var(--text-secondary); }
+.legal a { color: var(--accent); }
+.legal .meta { font-size: 13px; color: var(--text-tertiary); margin-bottom: 32px; }

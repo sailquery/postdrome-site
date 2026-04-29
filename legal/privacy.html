@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy — postdrome</title>
+  <meta name="description" content="Privacy policy for postdrome. Health data stays in your iCloud — never on our servers.">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+
+<header class="hero" style="padding-bottom: 32px;">
+  <nav>
+    <div class="logo"><a href="/">postdrome</a></div>
+    <div class="nav-links">
+      <a href="/about">About</a>
+      <a href="/legal/privacy">Privacy</a>
+      <a href="/legal/terms">Terms</a>
+    </div>
+  </nav>
+</header>
+
+<main class="legal">
+  <h1>Privacy Policy</h1>
+  <p class="meta">Last updated: April 29, 2026 · Effective: May 1, 2026</p>
+
+  <p>postdrome is built around a simple promise: <strong>we don't want your health data, and we go out of our way not to have it.</strong> This policy explains exactly what happens to information when you use the app.</p>
+
+  <h2>Quick summary</h2>
+  <p>
+  <ul style="margin-bottom: 24px; line-height: 1.8;">
+    <li>Your symptom logs, medications, voice memos, and personal notes <strong>stay on your device</strong> (and, if you opt in to Pro, sync via your own iCloud — Apple's CloudKit, not us).</li>
+    <li>We <strong>never receive your health data</strong>. Our backend stores only a anonymous user ID, your Pro purchase status, and an optional email if you check the "send me product updates" box.</li>
+    <li>Voice memos are transcribed <strong>on-device only</strong>. Your audio never leaves your phone.</li>
+    <li>We don't sell anything to advertisers, brokers, pharma, or anyone else. We don't show ads. We don't run any analytics inside the app.</li>
+    <li>If you delete the app or your iCloud, your data is gone.</li>
+  </ul>
+
+  <h2>What we collect (the entire list)</h2>
+  <p>When you sign in (which the app prompts after about a week of use, or when you export, import, or upgrade to Pro), we receive these fields from Sign in with Apple:</p>
+  <ul style="margin-bottom: 24px; line-height: 1.8;">
+    <li>An anonymous <strong>user ID</strong> issued by Apple. We can't reverse-engineer it back to your real Apple ID.</li>
+    <li>Your <strong>email address</strong>, OR Apple's hide-my-email relay address — you choose.</li>
+    <li>Optionally, your <strong>display name</strong> if you share it.</li>
+  </ul>
+  <p>If you purchase Pro, we also store a flag indicating that purchase. That's it.</p>
+
+  <h2>What we never collect</h2>
+  <p>We do not collect, transmit, or store any of the following:</p>
+  <ul style="margin-bottom: 24px; line-height: 1.8;">
+    <li>Symptom intensity, frequency, timing, or any field you log in the app.</li>
+    <li>Medications you record.</li>
+    <li>Voice memos or their transcripts.</li>
+    <li>Apple Health data (we only read it on-device).</li>
+    <li>Imported data from Migraine Buddy, Bearable, or any other source.</li>
+    <li>Location data beyond what's needed for the National Weather Service forecast call (used in the moment, never stored).</li>
+    <li>Device identifiers, IP addresses for tracking, or behavioral analytics inside the app.</li>
+  </ul>
+
+  <h2>Where your health data lives</h2>
+  <p>All symptom-tracking data lives in the app's local SwiftData store on your device. If you upgrade to Pro and enable cross-device sync, the data syncs through your own iCloud account using Apple's CloudKit private database — meaning Apple itself can't read it either, and we never see it. You own and control this data the same way you own and control your Notes app data.</p>
+
+  <h2>Apple Health</h2>
+  <p>If you grant the app access to Apple Health, we read symptom records (Headache, Dizziness, Nausea, etc.) and write back the few you log directly in postdrome (Headache, Dizziness, Nausea). All reads and writes happen on your device using Apple's HealthKit framework. We do not transmit any of this data anywhere.</p>
+
+  <h2>Location (barometric forecast)</h2>
+  <p>If you enable the barometric forecast feature, the app asks Apple for your approximate location (kilometer-level, "when in use"), uses it to call the National Weather Service API, and discards it. The NWS API receives your latitude and longitude with a User-Agent identifying postdrome. We do not store the location, log the request, or share it with any third party. Disable in iOS Settings → postdrome anytime.</p>
+
+  <h2>Voice memos</h2>
+  <p>When you record a voice memo in Aura Mode, the audio is saved as an .m4a file in the app's local Documents directory. Speech transcription runs entirely on-device using Apple's <code>SFSpeechRecognizer</code> with the on-device-only flag explicitly required. If on-device speech is unavailable on your device, the feature simply fails — we will never fall back to server-side recognition for health data.</p>
+
+  <h2>Sentry crash reports</h2>
+  <p>For crash reporting, we use Sentry. When the app crashes, Sentry sends Apple-provided crash info (stack trace, device model, iOS version, anonymous installation ID) to Sentry's servers. <strong>No symptom logs, medication records, voice memos, or personal notes are ever included in crash reports.</strong> Disable by deleting the app or filing a support request.</p>
+
+  <h2>Anonymous landing-page analytics (this website only)</h2>
+  <p>This marketing website (postdrome.app) uses PostHog to count visits and understand which pages get read. Only this website — never the app. Standard cookie + anonymous-ID analytics.</p>
+
+  <h2>Children</h2>
+  <p>postdrome is not intended for children under 13, and we do not knowingly collect any data from children.</p>
+
+  <h2>Changes to this policy</h2>
+  <p>If we ever change this policy in a way that affects what we collect, we'll update the "Last updated" date and email anyone who opted in to product updates. We will not change the core promise: your health data stays in your iCloud, never on our servers.</p>
+
+  <h2>Contact</h2>
+  <p>SailQuery LLC, Maryland, USA.<br>Privacy questions: <a href="mailto:support@sailquery.com">support@sailquery.com</a>.</p>
+
+  <p style="margin-top: 64px;"><a href="/">&larr; Back to postdrome.app</a></p>
+</main>
+
+<footer>
+  <div class="container">
+    <p class="copyright">&copy; 2026 SailQuery LLC.</p>
+  </div>
+</footer>
+
+</body>
+</html>
