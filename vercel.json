@@ -3,7 +3,8 @@
   "trailingSlash": false,
   "rewrites": [
     { "source": "/verify", "destination": "/api/verify" },
-    { "source": "/verify/:hash", "destination": "/api/verify?hash=:hash" }
+    { "source": "/verify/:hash", "destination": "/api/verify?hash=:hash" },
+    { "source": "/care/:id", "destination": "/api/care/:id" }
   ],
   "headers": [
     {
