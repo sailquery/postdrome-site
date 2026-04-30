@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
-    <title>Postdrome — Articles</title>
+    <title>Postdrome Articles</title>
     <link>https://postdrome.app/articles/</link>
     <description>Track what your migraine actually does to your week.</description>
     <language>en-US</language>
-    <lastBuildDate>Thu, 30 Apr 2026 02:56:45 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 30 Apr 2026 02:59:05 GMT</lastBuildDate>
     <managingEditor>support@sailquery.com (Postdrome)</managingEditor>
     <atom:link href="https://postdrome.app/rss.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Most migraine apps stop tracking the moment the headache stops.</title>
       <link>https://postdrome.app/articles/what-every-migraine-app-gets-wrong-about-postdrome/</link>
       <guid isPermaLink="true">https://postdrome.app/articles/what-every-migraine-app-gets-wrong-about-postdrome/</guid>
-      <pubDate>Thu, 30 Apr 2026 02:39:30 GMT</pubDate>
+      <pubDate>Thu, 30 Apr 2026 02:56:46 GMT</pubDate>
       <description>The 24-72 hour migraine after-phase is documented in clinical literature, named by the people who live it, and tracked by zero major incumbents as a first-class entity. The category fails it in four predictable shapes, and the gap is wider than the rest of the design choices put together.</description>
       <category>Category Analysis</category>
     </item>
