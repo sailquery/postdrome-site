@@ -75,6 +75,25 @@
       .button-large { padding: 14px 26px; font-size: 1.0rem; }
       .mid-article-cta__cta { background: #ffffff; color: #2c3744; box-shadow: 0 8px 18px rgba(0,0,0,0.12); }
       .mid-article-cta__cta:hover { background: #e6edf1; color: #2c3744; }
+      /* Email-capture form (secondary newsletter signup or primary form-mode closing CTA). */
+      .capture-section { padding: 48px 0; }
+      .capture-panel { max-width: 640px; margin: 0 auto; padding: 36px 32px; background: #ffffff; border: 1px solid #e5e5e0; border-radius: 22px; box-shadow: 0 12px 40px rgba(74, 107, 122, 0.12); text-align: center; }
+      .capture-panel__headline { margin: 0 0 12px; font-family: "Source Serif 4", "Source Serif Pro", Charter, "Iowan Old Style", Georgia, serif; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.2; color: #2c3744; }
+      .capture-panel__body { margin: 0 auto 22px; max-width: 520px; color: #5c5c58; font-size: 1.0rem; line-height: 1.55; }
+      .capture-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; max-width: 540px; margin: 0 auto; }
+      .capture-form__label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+      .capture-form__input { flex: 1 1 220px; min-width: 0; padding: 12px 18px; border-radius: 999px; border: 1px solid #e5e5e0; font: inherit; font-size: 1rem; background: #fafaf7; color: #1a1a1a; box-shadow: 0 1px 0 rgba(0,0,0,0.02); }
+      .capture-form__input:focus { outline: 2px solid #4a6b7a; outline-offset: 2px; border-color: #4a6b7a; }
+      .capture-form__submit { flex: 0 0 auto; }
+      .capture-form__submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+      .capture-form__result { margin: 16px 0 0; min-height: 1.4em; font-size: 0.96rem; color: #5c5c58; }
+      .capture-form__result--success { color: #4a6b7a; font-weight: 600; }
+      .capture-form__result--error { color: #b54530; }
+      .capture-form__privacy { margin: 16px 0 0; font-size: 0.82rem; color: #5c5c58; opacity: 0.75; }
+      @media (max-width: 480px) {
+        .capture-form { flex-direction: column; }
+        .capture-form__input, .capture-form__submit { width: 100%; }
+      }
       /* Footer. */
       .site-footer { margin-top: 64px; padding: 48px 0 36px; border-top: 1px solid #e5e5e0; background: #fafaf7; }
       .footer-grid { display: grid; grid-template-columns: minmax(240px, 1fr) repeat(2, minmax(140px, 1fr)); gap: 32px; align-items: start; }
@@ -197,7 +216,7 @@
           <p class="mid-article-cta__eyebrow">Get Postdrome</p>
           <p class="mid-article-cta__headline">Postdrome tracks the phase your current app stopped at, for $14.99 once, no subscription, ever.</p>
           <p class="mid-article-cta__body">Built around the four-phase migraine, with Aura Mode for use during an active attack and a continuous-symptom timeline that the discrete-attack incumbents can&#39;t model. Coming to iPhone.</p>
-          <a class="button button-primary button-large mid-article-cta__cta" href="mailto:support@sailquery.com?subject=postdrome%20beta">Email us about the beta</a>
+          <a class="button button-primary button-large mid-article-cta__cta" href="#subscribe">Email me when it&#39;s ready</a>
         </aside>
         <article class="content-panel">
           <h2>Four ways the category fails at postdrome</h2>
@@ -242,12 +261,18 @@
         </article>
         </div>
       </section>
-      <section class="section section-alt">
-        <div class="container cta-panel">
-          <h2>Postdrome is coming to iPhone, be the first to know when it ships</h2>
-          <p>Read by chronic and vestibular migraine sufferers, headache-specialist clinicians, and the people who care for them, anyone whose week is shaped by the part of the migraine that the trackers stopped tracking.</p>
-          <div class="cta-actions">
-            <a class="button button-primary button-large" href="mailto:support@sailquery.com?subject=postdrome%20beta">Email us about the beta</a>
+      <section class="section capture-section" id="subscribe">
+        <div class="container">
+          <div class="capture-panel">
+            <h2 class="capture-panel__headline">Get notified when Postdrome ships</h2>
+            <p class="capture-panel__body">Postdrome is coming to iPhone. We&#39;ll email you the day it launches, with the lifetime price locked in for waitlist members.</p>
+            <form class="capture-form" data-app="postdrome" data-source="postdrome-four-pattern-framework" data-success="You&#39;re on the waitlist. We&#39;ll be in touch." novalidate>
+              <label class="capture-form__label" for="capture-postdrome-four-pattern-framework">Email</label>
+              <input class="capture-form__input" id="capture-postdrome-four-pattern-framework" name="email" type="email" required autocomplete="email" placeholder="you@email.com" />
+              <button class="button button-primary button-large capture-form__submit" type="submit">Email me when it&#39;s ready</button>
+            </form>
+            <p class="capture-form__result" aria-live="polite"></p>
+            <p class="capture-form__privacy">No spam. Unsubscribe anytime. Replies go to support@sailquery.com.</p>
           </div>
         </div>
       </section>
@@ -283,5 +308,41 @@
     </footer>
   </div>
   <script defer src="/script.js"></script>
+  <script>
+    (function () {
+      var forms = document.querySelectorAll('form.capture-form');
+      if (!forms.length) return;
+      forms.forEach(function (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var input = form.querySelector('input[name="email"]');
+          var btn = form.querySelector('button[type="submit"]');
+          var result = form.parentElement.querySelector('.capture-form__result');
+          var email = (input.value || '').trim();
+          if (!email) return;
+          btn.disabled = true;
+          result.textContent = 'Sending…';
+          result.className = 'capture-form__result';
+          fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email, source: form.dataset.source || '' })
+          }).then(function (res) {
+            if (!res.ok && res.status !== 200) throw new Error(String(res.status));
+            return res.json().catch(function () { return {}; });
+          }).then(function () {
+            result.textContent = form.dataset.success || "You're in.";
+            result.className = 'capture-form__result capture-form__result--success';
+            form.reset();
+          }).catch(function () {
+            result.textContent = 'Something went wrong. Try again or email support@sailquery.com.';
+            result.className = 'capture-form__result capture-form__result--error';
+          }).finally(function () {
+            btn.disabled = false;
+          });
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
