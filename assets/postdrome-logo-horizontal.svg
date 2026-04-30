@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="840" height="200" viewBox="0 0 840 200">
+  
+  <g stroke="#1B7288" stroke-width="5.29" stroke-linecap="round" fill="none">
+    <line x1="135.58" y1="100.00" x2="280.22" y2="100.00"/>
+    <path d="M 192.02 100.00 A 15.88 15.88 0 0 1 223.78 100.00"/>
+  </g>
+  <text x="329.07" y="136.96"
+        font-family="'Source Serif 4', 'Source Serif Pro', Charter, 'Iowan Old Style', Georgia, serif"
+        font-size="126.00"
+        font-weight="400"
+        fill="#1F2937"
+        letter-spacing="-0.5">postdrome</text>
+</svg>
