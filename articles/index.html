@@ -1,64 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Articles — postdrome</title>
-  <meta name="description" content="Long-form writing about chronic migraine, the CGRP era, vestibular migraine, and navigating insurance + disability.">
-  <link rel="stylesheet" href="/styles.css">
-  <link rel="alternate" type="application/rss+xml" title="postdrome articles" href="/rss.xml">
-  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-  <link rel="icon" type="image/png" href="/assets/favicon.png">
-  <link rel="apple-touch-icon" href="/assets/favicon.png">
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>For people whose migraine doesn&#39;t fit the form. — Postdrome</title>
+    <meta name="description" content="Writing about chronic migraine, the CGRP era, vestibular migraine, and the things trackers keep getting wrong." />
+    <link rel="canonical" href="https://postdrome.app/articles/" />
+    <link rel="alternate" type="application/rss+xml" title="Postdrome Articles" href="https://postdrome.app/rss.xml" />
+    <meta property="og:title" content="For people whose migraine doesn&#39;t fit the form. — Postdrome" />
+    <meta property="og:description" content="Writing about chronic migraine, the CGRP era, vestibular migraine, and the things trackers keep getting wrong." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://postdrome.app/articles/" />
+    <meta property="og:image" content="https://postdrome.app/assets/og/articles.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Postdrome" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="For people whose migraine doesn&#39;t fit the form. — Postdrome" />
+    <meta name="twitter:description" content="Writing about chronic migraine, the CGRP era, vestibular migraine, and the things trackers keep getting wrong." />
+    <meta name="twitter:image" content="https://postdrome.app/assets/og/articles.svg" />
+    <meta name="theme-color" content="#2c3744" />
+    <link rel="icon" href="/assets/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/favicon.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      /* Article-page styling, injected by SQMarketer renderer.
+         Parameterized by per-app theme palette (Postdrome). */
+      body { background: #fafaf7; color: #1a1a1a; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif; }
+      a { color: #4a6b7a; text-decoration: none; }
+      img { max-width: 100%; height: auto; display: block; }
+      /* Header: sticky brand bar with size-constrained logo. Fixes the
+         intrinsic-size logo bug on hosts whose CSS lacked .brand-logo. */
+      .site-header { position: sticky; top: 0; z-index: 20; background: rgba(250, 250, 247, 0.92); backdrop-filter: blur(18px); border-bottom: 1px solid #e5e5e0; }
+      .nav-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 0; }
+      .container { width: min(1140px, calc(100% - 40px)); margin: 0 auto; }
+      .brand { display: inline-flex; align-items: center; color: #2c3744; }
+      .brand-logo { height: 56px; width: auto; }
+      .footer-logo { height: 40px; }
+      /* Page hero: eyebrow + serif H1 + dek + inline OG SVG. */
+      .page-hero { padding: 56px 0 16px; }
+      .eyebrow { margin: 0 0 14px; color: #4a6b7a; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif; font-size: 0.84rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+      .page-hero h1 { margin: 0 0 18px; font-family: "Source Serif 4", "Source Serif Pro", Charter, "Iowan Old Style", Georgia, serif; font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.15; letter-spacing: -0.01em; color: #2c3744; }
+      .page-hero > .container > p { margin: 0; max-width: 720px; font-size: 1.08rem; line-height: 1.55; color: #5c5c58; }
+      .article-hero-image { display: block; width: 100%; max-width: 880px; height: auto; margin: 28px auto 0; border-radius: 18px; box-shadow: 0 12px 40px rgba(74, 107, 122, 0.12); }
+      /* Body sections: each as a bordered card on the page bg.
+         The chunked-reading pattern from Met's host CSS, now portable. */
+      .section { padding: 32px 0; }
+      .section-alt { padding: 56px 0; background: #e6edf1; }
+      .support-grid { display: grid; gap: 22px; }
+      .content-panel { background: #ffffff; border: 1px solid #e5e5e0; border-radius: 18px; padding: 32px; box-shadow: 0 12px 40px rgba(74, 107, 122, 0.12); }
+      .content-panel h2 { margin: 0 0 18px; font-family: "Source Serif 4", "Source Serif Pro", Charter, "Iowan Old Style", Georgia, serif; font-size: 1.5rem; line-height: 1.25; color: #2c3744; }
+      .content-panel p { margin: 0 0 14px; font-size: 1.02rem; line-height: 1.65; color: #1a1a1a; }
+      .content-panel p:last-child { margin-bottom: 0; }
+      .content-panel ol { margin: 14px 0; padding-left: 22px; }
+      .content-panel li { margin: 0 0 14px; font-size: 1.02rem; line-height: 1.65; color: #1a1a1a; }
+      .content-panel li:last-child { margin-bottom: 0; }
+      .content-panel strong { color: #2c3744; }
+      /* Mid-article CTA: bold gradient panel between sections 2 and 3. */
+      .mid-article-cta { margin: 22px 0; padding: 32px 32px 28px; border-radius: 22px; background: linear-gradient(135deg, #2c3744 0%, #4a6b7a 100%); color: #ffffff; box-shadow: 0 12px 40px rgba(74, 107, 122, 0.12); position: relative; overflow: hidden; }
+      .mid-article-cta__eyebrow { margin: 0 0 12px; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #b8862e; }
+      .mid-article-cta__headline { margin: 0 0 12px; font-family: "Source Serif 4", "Source Serif Pro", Charter, "Iowan Old Style", Georgia, serif; font-size: 1.5rem; line-height: 1.25; color: #ffffff; }
+      .mid-article-cta__body { margin: 0 0 22px; font-size: 1.0rem; line-height: 1.55; color: rgba(255,255,255,0.85); }
+      /* Closing CTA panel. */
+      .cta-panel { text-align: center; padding: 12px 0; }
+      .cta-panel h2 { margin: 0 0 14px; font-family: "Source Serif 4", "Source Serif Pro", Charter, "Iowan Old Style", Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.2; color: #2c3744; }
+      .cta-panel p { margin: 0 auto 22px; max-width: 600px; color: #5c5c58; font-size: 1.0rem; line-height: 1.55; }
+      .cta-actions { display: flex; justify-content: center; }
+      /* Buttons. */
+      .button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 999px; border: 1px solid transparent; padding: 12px 20px; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif; font-weight: 600; font-size: 0.96rem; cursor: pointer; transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease; }
+      .button:hover { transform: translateY(-1px); }
+      .button-primary { background: #4a6b7a; color: #ffffff; box-shadow: 0 12px 24px rgba(74, 107, 122, 0.22); }
+      .button-primary:hover { background: #2c3744; }
+      .button-large { padding: 14px 26px; font-size: 1.0rem; }
+      .mid-article-cta__cta { background: #ffffff; color: #2c3744; box-shadow: 0 8px 18px rgba(0,0,0,0.12); }
+      .mid-article-cta__cta:hover { background: #e6edf1; color: #2c3744; }
+      /* Email-capture form (secondary newsletter signup or primary form-mode closing CTA). */
+      .capture-section { padding: 48px 0; }
+      .capture-panel { max-width: 640px; margin: 0 auto; padding: 36px 32px; background: #ffffff; border: 1px solid #e5e5e0; border-radius: 22px; box-shadow: 0 12px 40px rgba(74, 107, 122, 0.12); text-align: center; }
+      .capture-panel__headline { margin: 0 0 12px; font-family: "Source Serif 4", "Source Serif Pro", Charter, "Iowan Old Style", Georgia, serif; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.2; color: #2c3744; }
+      .capture-panel__body { margin: 0 auto 22px; max-width: 520px; color: #5c5c58; font-size: 1.0rem; line-height: 1.55; }
+      .capture-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; max-width: 540px; margin: 0 auto; }
+      .capture-form__label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+      .capture-form__input { flex: 1 1 220px; min-width: 0; padding: 12px 18px; border-radius: 999px; border: 1px solid #e5e5e0; font: inherit; font-size: 1rem; background: #fafaf7; color: #1a1a1a; box-shadow: 0 1px 0 rgba(0,0,0,0.02); }
+      .capture-form__input:focus { outline: 2px solid #4a6b7a; outline-offset: 2px; border-color: #4a6b7a; }
+      .capture-form__submit { flex: 0 0 auto; }
+      .capture-form__submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+      .capture-form__result { margin: 16px 0 0; min-height: 1.4em; font-size: 0.96rem; color: #5c5c58; }
+      .capture-form__result--success { color: #4a6b7a; font-weight: 600; }
+      .capture-form__result--error { color: #b54530; }
+      .capture-form__privacy { margin: 16px 0 0; font-size: 0.82rem; color: #5c5c58; opacity: 0.75; }
+      @media (max-width: 480px) {
+        .capture-form { flex-direction: column; }
+        .capture-form__input, .capture-form__submit { width: 100%; }
+      }
+      /* Footer. */
+      .site-footer { margin-top: 64px; padding: 48px 0 36px; border-top: 1px solid #e5e5e0; background: #fafaf7; }
+      .footer-grid { display: grid; grid-template-columns: minmax(240px, 1fr) repeat(2, minmax(140px, 1fr)); gap: 32px; align-items: start; }
+      .footer-grid h3 { margin: 0 0 14px; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5c5c58; }
+      .footer-grid ul { list-style: none; padding: 0; margin: 0; }
+      .footer-grid li { margin: 0 0 8px; }
+      .footer-copy { margin: 14px 0 6px; color: #5c5c58; font-size: 0.92rem; }
+      .footer-us { margin: 0; color: #5c5c58; font-size: 0.84rem; }
+      @media (max-width: 720px) {
+        .footer-grid { grid-template-columns: 1fr; }
+        .content-panel { padding: 24px; }
+        .mid-article-cta { padding: 26px 24px 22px; }
+        .brand-logo { height: 44px; }
+      }
+    </style>
+    <script defer src="/analytics.js"></script>
+    <script type="application/ld+json">
+    {
+          "@context": "https://schema.org",
+          "@type": "WebPage",
+          "name": "For people whose migraine doesn't fit the form. — Postdrome",
+          "description": "Writing about chronic migraine, the CGRP era, vestibular migraine, and the things trackers keep getting wrong.",
+          "url": "https://postdrome.app/articles/",
+          "publisher": {
+                "@type": "Organization",
+                "name": "Postdrome",
+                "logo": {
+                      "@type": "ImageObject",
+                      "url": "https://postdrome.app/assets/postdrome-logo-horizontal.png"
+                }
+          }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+                {
+                      "@type": "ListItem",
+                      "position": 1,
+                      "name": "Postdrome",
+                      "item": "https://postdrome.app/"
+                },
+                {
+                      "@type": "ListItem",
+                      "position": 2,
+                      "name": "Articles",
+                      "item": "https://postdrome.app/articles/"
+                },
+                {
+                      "@type": "ListItem",
+                      "position": 3,
+                      "name": "For people whose migraine doesn't fit the form. — Postdrome",
+                      "item": "https://postdrome.app/articles/"
+                }
+          ]
+    }
+    </script>
+  </head>
 <body>
-
-<header class="hero" style="padding-bottom: 32px;">
-  <nav>
-    <div class="logo"><a href="/">postdrome</a></div>
-    <div class="nav-links">
-      <a href="/about">About</a>
-      <a href="/articles">Articles</a>
-      <a href="/legal/privacy">Privacy</a>
-      <a href="/legal/terms">Terms</a>
-    </div>
-  </nav>
-</header>
-
-<main class="legal">
-  <h1>Articles</h1>
-  <p class="meta">Writing about chronic migraine, the CGRP era, vestibular migraine, and the things trackers keep getting wrong.</p>
-
-  <article style="padding: 24px 0; border-top: 1px solid #e5e2db;">
-    <p style="font-size: 13px; color: var(--text-tertiary); margin-bottom: 8px;">
-      <time datetime="2026-04-29">April 29, 2026</time>
-    </p>
-    <h2 style="margin: 0 0 12px;"><a href="/articles/what-every-migraine-app-gets-wrong-about-postdrome" style="color: var(--text); text-decoration: none;">What every migraine app gets wrong about postdrome</a></h2>
-    <p style="margin-bottom: 12px;">Postdrome is a clinical phase of migraine, and zero major trackers model it. Four failure patterns across the category, and the data model that actually fits the disorder.</p>
-    <p style="margin: 0;"><a href="/articles/what-every-migraine-app-gets-wrong-about-postdrome">Read &rarr;</a></p>
-  </article>
-
-  <section style="margin-top: 64px; padding-top: 32px; border-top: 1px solid #e5e2db;">
-    <h2>In the queue</h2>
-    <ul style="line-height: 1.8;">
-      <li>How to talk to your neurologist about a tracking app</li>
-      <li>The four-pattern framework: what your timeline is actually telling you</li>
-      <li>Vestibular migraine 101 — and why your tracker probably doesn't fit</li>
-      <li>What insurance prior auth for CGRP biologics actually requires</li>
-      <li>Why we don't take subscriptions</li>
-      <li>How to read a postdrome doctor's report at your next appointment</li>
-    </ul>
-    <p style="margin-top: 24px;">Want one bumped up? Email <a href="mailto:support@sailquery.com?subject=Articles%20idea">support@sailquery.com</a>.</p>
-  </section>
-
-  <p style="margin-top: 64px;"><a href="/">&larr; Back to postdrome.app</a></p>
-</main>
-
-<footer>
-  <div class="container">
-    <p class="copyright">&copy; 2026 SailQuery LLC.</p>
+  <!-- Auto-regenerated by SQMarketer publish-to-site on every article publish.
+       Hand edits will be overwritten. To change the hero copy, edit
+       SiteShellConfig.articleIndex{Eyebrow,Headline,Dek} in src/agents/publish-to-site.ts. -->
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container nav-row">
+        <a class="brand" href="/">
+          <img src="/assets/postdrome-logo-horizontal.png" alt="Postdrome" class="brand-logo" />
+        </a>
+        <div class="nav-actions">
+          <a class="button button-primary" href="/#download">Get Postdrome</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <p class="eyebrow">Articles</p>
+          <h1>For people whose migraine doesn&#39;t fit the form.</h1>
+          <p>Writing about chronic migraine, the CGRP era, vestibular migraine, and the things trackers keep getting wrong.</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container support-grid" style="grid-template-columns: minmax(0, 1fr); max-width: 760px;">
+        <article class="content-panel">
+          <p class="eyebrow">Article · May 1, 2026</p>
+          <h2 style="margin: 0 0 14px;"><a href="/articles/what-every-migraine-app-gets-wrong-about-postdrome/" style="color: inherit; text-decoration: none;">What every migraine app gets wrong about postdrome</a></h2>
+          <p>The 24-72 hour migraine after-phase is documented in clinical literature, named by the people who live it, and tracked by zero major incumbents as a first-class entity. The category fails it in four predictable shapes, and the gap is wider than the rest of the design choices put together.</p>
+          <p style="margin-bottom: 0;"><a href="/articles/what-every-migraine-app-gets-wrong-about-postdrome/" class="article-index-readmore">Read the article →</a></p>
+        </article>
+        <article class="content-panel">
+          <p class="eyebrow">Article · May 1, 2026</p>
+          <h2 style="margin: 0 0 14px;"><a href="/articles/the-vestibular-migraine-schema-problem/" style="color: inherit; text-decoration: none;">The vestibular migraine schema problem: why your tracker can&#39;t represent your symptoms</a></h2>
+          <p>If your migraines don&#39;t end, your tracker doesn&#39;t know what to do with you. The data model in every major incumbent assumes a discrete attack with a start time and an end time. The chronic and vestibular cohort, roughly 5.5 million Americans, has been excluded from category tooling for fifteen years by a schema choice nobody calls a schema choice.</p>
+          <p style="margin-bottom: 0;"><a href="/articles/the-vestibular-migraine-schema-problem/" class="article-index-readmore">Read the article →</a></p>
+        </article>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+        <a class="brand" href="/">
+          <img src="/assets/postdrome-logo-horizontal.png" alt="Postdrome" class="brand-logo footer-logo" />
+        </a>
+          <p class="footer-copy">Track what your migraine actually does to your week.</p>
+          <p class="footer-us">Built in the US. Health data stays in your iCloud.</p>
+        </div>
+        <div>
+          <h3>Product</h3>
+          <ul>
+            <li><a href="/#how-it-works">How it Works</a></li>
+            <li><a href="/#pricing">Pricing</a></li>
+            <li><a href="/#download">Download</a></li>
+            <li><a href="/articles/">Articles</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="mailto:support@sailquery.com">Contact</a></li>
+            <li><a href="/support/">Support</a></li>
+            <li><a href="/legal/privacy.html">Privacy</a></li>
+            <li><a href="/legal/terms.html">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
   </div>
-</footer>
-
+  <script defer src="/script.js"></script>
 </body>
 </html>
