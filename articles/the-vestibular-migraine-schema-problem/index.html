@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Vestibular Migraine Schema Problem</title>
+    <meta name="description" content="Every major migraine tracker assumes a discrete attack with a start and end. The chronic and vestibular cohort, around 5.5 million Americans, has been excluded by a schema choice nobody calls a schema choice." />
+    <meta name="keywords" content="vestibular migraine tracker, chronic migraine app, continuous symptom migraine tracker, tracker for vestibular migraine, migraine app for chronic, migraine app no attacks, best app for vestibular migraine, migraine without end time, schema lock-in migraine app, Bárány Society vestibular migraine" />
+    <link rel="canonical" href="https://postdrome.app/articles/the-vestibular-migraine-schema-problem/" />
+    <link rel="alternate" type="application/rss+xml" title="Postdrome Articles" href="https://postdrome.app/rss.xml" />
+    <meta property="og:title" content="The Vestibular Migraine Schema Problem" />
+    <meta property="og:description" content="Every major migraine tracker assumes a discrete attack with a start and end. The chronic and vestibular cohort, around 5.5 million Americans, has been excluded by a schema choice nobody calls a schema choice." />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://postdrome.app/articles/the-vestibular-migraine-schema-problem/" />
+    <meta property="og:image" content="https://postdrome.app/assets/og/vestibular-schema-problem.svg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:site_name" content="Postdrome" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="The Vestibular Migraine Schema Problem" />
+    <meta name="twitter:description" content="Every major migraine tracker assumes a discrete attack with a start and end. The chronic and vestibular cohort, around 5.5 million Americans, has been excluded by a schema choice nobody calls a schema choice." />
+    <meta name="twitter:image" content="https://postdrome.app/assets/og/vestibular-schema-problem.svg" />
+    <meta name="theme-color" content="#2c3744" />
+    <link rel="icon" href="/assets/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/assets/favicon.png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <style>
+      /* Article-page styling, injected by SQMarketer renderer.
+         Parameterized by per-app theme palette (Postdrome). */
+      body { background: #fafaf7; color: #1a1a1a; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif; }
+      a { color: #4a6b7a; text-decoration: none; }
+      img { max-width: 100%; height: auto; display: block; }
+      /* Header: sticky brand bar with size-constrained logo. Fixes the
+         intrinsic-size logo bug on hosts whose CSS lacked .brand-logo. */
+      .site-header { position: sticky; top: 0; z-index: 20; background: rgba(250, 250, 247, 0.92); backdrop-filter: blur(18px); border-bottom: 1px solid #e5e5e0; }
+      .nav-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 16px 0; }
+      .container { width: min(1140px, calc(100% - 40px)); margin: 0 auto; }
+      .brand { display: inline-flex; align-items: center; color: #2c3744; }
+      .brand-logo { height: 56px; width: auto; }
+      .footer-logo { height: 40px; }
+      /* Page hero: eyebrow + serif H1 + dek + inline OG SVG. */
+      .page-hero { padding: 56px 0 16px; }
+      .eyebrow { margin: 0 0 14px; color: #4a6b7a; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif; font-size: 0.84rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; }
+      .page-hero h1 { margin: 0 0 18px; font-family: "Source Serif 4", "Source Serif Pro", Charter, "Iowan Old Style", Georgia, serif; font-size: clamp(1.9rem, 4vw, 2.8rem); line-height: 1.15; letter-spacing: -0.01em; color: #2c3744; }
+      .page-hero > .container > p { margin: 0; max-width: 720px; font-size: 1.08rem; line-height: 1.55; color: #5c5c58; }
+      .article-hero-image { display: block; width: 100%; max-width: 880px; height: auto; margin: 28px auto 0; border-radius: 18px; box-shadow: 0 12px 40px rgba(74, 107, 122, 0.12); }
+      /* Body sections: each as a bordered card on the page bg.
+         The chunked-reading pattern from Met's host CSS, now portable. */
+      .section { padding: 32px 0; }
+      .section-alt { padding: 56px 0; background: #e6edf1; }
+      .support-grid { display: grid; gap: 22px; }
+      .content-panel { background: #ffffff; border: 1px solid #e5e5e0; border-radius: 18px; padding: 32px; box-shadow: 0 12px 40px rgba(74, 107, 122, 0.12); }
+      .content-panel h2 { margin: 0 0 18px; font-family: "Source Serif 4", "Source Serif Pro", Charter, "Iowan Old Style", Georgia, serif; font-size: 1.5rem; line-height: 1.25; color: #2c3744; }
+      .content-panel p { margin: 0 0 14px; font-size: 1.02rem; line-height: 1.65; color: #1a1a1a; }
+      .content-panel p:last-child { margin-bottom: 0; }
+      .content-panel ol { margin: 14px 0; padding-left: 22px; }
+      .content-panel li { margin: 0 0 14px; font-size: 1.02rem; line-height: 1.65; color: #1a1a1a; }
+      .content-panel li:last-child { margin-bottom: 0; }
+      .content-panel strong { color: #2c3744; }
+      /* Mid-article CTA: bold gradient panel between sections 2 and 3. */
+      .mid-article-cta { margin: 22px 0; padding: 32px 32px 28px; border-radius: 22px; background: linear-gradient(135deg, #2c3744 0%, #4a6b7a 100%); color: #ffffff; box-shadow: 0 12px 40px rgba(74, 107, 122, 0.12); position: relative; overflow: hidden; }
+      .mid-article-cta__eyebrow { margin: 0 0 12px; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: #b8862e; }
+      .mid-article-cta__headline { margin: 0 0 12px; font-family: "Source Serif 4", "Source Serif Pro", Charter, "Iowan Old Style", Georgia, serif; font-size: 1.5rem; line-height: 1.25; color: #ffffff; }
+      .mid-article-cta__body { margin: 0 0 22px; font-size: 1.0rem; line-height: 1.55; color: rgba(255,255,255,0.85); }
+      /* Closing CTA panel. */
+      .cta-panel { text-align: center; padding: 12px 0; }
+      .cta-panel h2 { margin: 0 0 14px; font-family: "Source Serif 4", "Source Serif Pro", Charter, "Iowan Old Style", Georgia, serif; font-size: clamp(1.6rem, 3vw, 2.2rem); line-height: 1.2; color: #2c3744; }
+      .cta-panel p { margin: 0 auto 22px; max-width: 600px; color: #5c5c58; font-size: 1.0rem; line-height: 1.55; }
+      .cta-actions { display: flex; justify-content: center; }
+      /* Buttons. */
+      .button { display: inline-flex; align-items: center; justify-content: center; gap: 8px; border-radius: 999px; border: 1px solid transparent; padding: 12px 20px; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif; font-weight: 600; font-size: 0.96rem; cursor: pointer; transition: transform 150ms ease, box-shadow 150ms ease, background 150ms ease; }
+      .button:hover { transform: translateY(-1px); }
+      .button-primary { background: #4a6b7a; color: #ffffff; box-shadow: 0 12px 24px rgba(74, 107, 122, 0.22); }
+      .button-primary:hover { background: #2c3744; }
+      .button-large { padding: 14px 26px; font-size: 1.0rem; }
+      .mid-article-cta__cta { background: #ffffff; color: #2c3744; box-shadow: 0 8px 18px rgba(0,0,0,0.12); }
+      .mid-article-cta__cta:hover { background: #e6edf1; color: #2c3744; }
+      /* Email-capture form (secondary newsletter signup or primary form-mode closing CTA). */
+      .capture-section { padding: 48px 0; }
+      .capture-panel { max-width: 640px; margin: 0 auto; padding: 36px 32px; background: #ffffff; border: 1px solid #e5e5e0; border-radius: 22px; box-shadow: 0 12px 40px rgba(74, 107, 122, 0.12); text-align: center; }
+      .capture-panel__headline { margin: 0 0 12px; font-family: "Source Serif 4", "Source Serif Pro", Charter, "Iowan Old Style", Georgia, serif; font-size: clamp(1.5rem, 3vw, 2rem); line-height: 1.2; color: #2c3744; }
+      .capture-panel__body { margin: 0 auto 22px; max-width: 520px; color: #5c5c58; font-size: 1.0rem; line-height: 1.55; }
+      .capture-form { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; max-width: 540px; margin: 0 auto; }
+      .capture-form__label { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+      .capture-form__input { flex: 1 1 220px; min-width: 0; padding: 12px 18px; border-radius: 999px; border: 1px solid #e5e5e0; font: inherit; font-size: 1rem; background: #fafaf7; color: #1a1a1a; box-shadow: 0 1px 0 rgba(0,0,0,0.02); }
+      .capture-form__input:focus { outline: 2px solid #4a6b7a; outline-offset: 2px; border-color: #4a6b7a; }
+      .capture-form__submit { flex: 0 0 auto; }
+      .capture-form__submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+      .capture-form__result { margin: 16px 0 0; min-height: 1.4em; font-size: 0.96rem; color: #5c5c58; }
+      .capture-form__result--success { color: #4a6b7a; font-weight: 600; }
+      .capture-form__result--error { color: #b54530; }
+      .capture-form__privacy { margin: 16px 0 0; font-size: 0.82rem; color: #5c5c58; opacity: 0.75; }
+      @media (max-width: 480px) {
+        .capture-form { flex-direction: column; }
+        .capture-form__input, .capture-form__submit { width: 100%; }
+      }
+      /* Footer. */
+      .site-footer { margin-top: 64px; padding: 48px 0 36px; border-top: 1px solid #e5e5e0; background: #fafaf7; }
+      .footer-grid { display: grid; grid-template-columns: minmax(240px, 1fr) repeat(2, minmax(140px, 1fr)); gap: 32px; align-items: start; }
+      .footer-grid h3 { margin: 0 0 14px; font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif; font-size: 0.78rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: #5c5c58; }
+      .footer-grid ul { list-style: none; padding: 0; margin: 0; }
+      .footer-grid li { margin: 0 0 8px; }
+      .footer-copy { margin: 14px 0 6px; color: #5c5c58; font-size: 0.92rem; }
+      .footer-us { margin: 0; color: #5c5c58; font-size: 0.84rem; }
+      @media (max-width: 720px) {
+        .footer-grid { grid-template-columns: 1fr; }
+        .content-panel { padding: 24px; }
+        .mid-article-cta { padding: 26px 24px 22px; }
+        .brand-logo { height: 44px; }
+      }
+    </style>
+    <script defer src="/analytics.js"></script>
+    <script type="application/ld+json">
+    {
+          "@context": "https://schema.org",
+          "@type": "Article",
+          "name": "The vestibular migraine schema problem: why your tracker can't represent your symptoms",
+          "description": "Every major migraine tracker assumes a discrete attack with a start and end. The chronic and vestibular cohort, around 5.5 million Americans, has been excluded by a schema choice nobody calls a schema choice.",
+          "url": "https://postdrome.app/articles/the-vestibular-migraine-schema-problem/",
+          "publisher": {
+                "@type": "Organization",
+                "name": "Postdrome",
+                "logo": {
+                      "@type": "ImageObject",
+                      "url": "https://postdrome.app/assets/postdrome-logo-horizontal.png"
+                }
+          },
+          "headline": "If your migraines don't end, the tracker can't represent you.",
+          "image": [
+                {
+                      "@type": "ImageObject",
+                      "url": "https://postdrome.app/assets/og/vestibular-schema-problem.svg",
+                      "width": 1200,
+                      "height": 630
+                }
+          ],
+          "author": {
+                "@type": "Person",
+                "name": "Cal"
+          },
+          "datePublished": "2026-05-01T00:00:00.000Z",
+          "dateModified": "2026-05-01T00:00:00.000Z",
+          "mainEntityOfPage": {
+                "@type": "WebPage",
+                "@id": "https://postdrome.app/articles/the-vestibular-migraine-schema-problem/"
+          },
+          "articleSection": "Category Analysis",
+          "keywords": "vestibular migraine tracker, chronic migraine app, continuous symptom migraine tracker, tracker for vestibular migraine, migraine app for chronic, migraine app no attacks, best app for vestibular migraine, migraine without end time, schema lock-in migraine app, Bárány Society vestibular migraine",
+          "wordCount": 1800,
+          "timeRequired": "PT8M"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+          "@context": "https://schema.org",
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+                {
+                      "@type": "ListItem",
+                      "position": 1,
+                      "name": "Postdrome",
+                      "item": "https://postdrome.app/"
+                },
+                {
+                      "@type": "ListItem",
+                      "position": 2,
+                      "name": "Articles",
+                      "item": "https://postdrome.app/articles/"
+                },
+                {
+                      "@type": "ListItem",
+                      "position": 3,
+                      "name": "The vestibular migraine schema problem: why your tracker can't represent your symptoms",
+                      "item": "https://postdrome.app/articles/the-vestibular-migraine-schema-problem/"
+                }
+          ]
+    }
+    </script>
+  </head>
+<body>
+  <div class="site-shell">
+    <header class="site-header">
+      <div class="container nav-row">
+        <a class="brand" href="/">
+          <img src="/assets/postdrome-logo-horizontal.png" alt="Postdrome" class="brand-logo" />
+        </a>
+        <div class="nav-actions">
+          <a class="button button-primary" href="/#download">Get Postdrome</a>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <img src="/assets/og/vestibular-schema-problem.svg" alt="" role="presentation" class="article-hero-image" loading="eager" />
+          <p class="eyebrow">Article · 8 min read</p>
+          <h1>If your migraines don&#39;t end, the tracker can&#39;t represent you.</h1>
+          <p>If your migraines don&#39;t end, your tracker doesn&#39;t know what to do with you. The data model in every major incumbent assumes a discrete attack with a start time and an end time. The chronic and vestibular cohort, roughly 5.5 million Americans, has been excluded from category tooling for fifteen years by a schema choice nobody calls a schema choice.</p>
+        </div>
+      </section>
+      <section class="section">
+        <div class="container support-grid" style="grid-template-columns: minmax(0, 1fr); max-width: 760px;">
+        <article class="content-panel">
+          <h2>There&#39;s no end-of-attack to log</h2>
+          <p>Your migraines don&#39;t have an end. They have a Tuesday morning where the worst of it has passed, an afternoon where the head pressure ebbs and the dizziness comes forward, an evening where you&#39;re functional enough to drive but not enough to work, and a Wednesday that feels like a recovery day except by Wednesday afternoon you&#39;re back inside the next attack.</p>
+          <p>You open your tracker. The first field asks when the attack started. You guess Tuesday morning, since that was when the headache part was worst. The second field asks when the attack ended. The cursor sits there. Your migraine didn&#39;t end. It has been a different shape for sixteen hours, then a different shape after that. You enter Tuesday afternoon as the end time because the field requires a value, then the entry tells you it was an eight-hour migraine, which is wrong by a factor of four.</p>
+          <p>This is the experience of opening a migraine tracker as a chronic or vestibular migraineur. The form doesn&#39;t fit the disease. You either lie to the tool to make it accept the data, or you give up and stop logging, and either way the tracker has stopped being a record of what happened to you.</p>
+        </article>
+        <article class="content-panel">
+          <h2>The schema problem, named</h2>
+          <p>Every major migraine tracker on the App Store, without exception, models a migraine as a row with start_timestamp and end_timestamp. The headache phenotype that fits this schema is episodic migraine: a discrete attack with a beginning, an end, and a clear gap between attacks. Episodic migraine is real, common, and the dominant phenotype in the patient population.</p>
+          <p>It is not the only phenotype.</p>
+          <p>Chronic migraine, as defined by the International Classification of Headache Disorders, is fifteen or more headache days per month for three months or more, with at least eight of those days having migraine features. The CM phenotype includes patients for whom the headache rarely fully clears between attacks, and patients for whom three different attack types, vestibular, ictal, postdrome-bleeding-into-prodrome, overlap in irregular cascades. There is no clean start and end timestamp on most of these patients&#39; worst weeks.</p>
+          <p>Vestibular migraine, recognized by the Bárány Society and the International Headache Society as a distinct entity since 2012, presents with vestibular symptoms (dizziness, vertigo, motion sensitivity, visual instability) that frequently aren&#39;t temporally aligned with headache pain. Many vestibular migraineurs experience continuous low-grade symptoms with episodic acute exacerbations, a continuous-symptom phenotype that the discrete-attack schema literally cannot represent.</p>
+          <p>Continuous-symptom migraine isn&#39;t an edge case. The chronic migraine population alone is roughly 1% of US adults, around 2.5 million people. The vestibular migraine population overlaps but extends further, especially in women aged 35-55 where vestibular phenotype prevalence is highest. Combined with the postdrome-dominant and CGRP-on-but-not-cured cohorts, you have a population in the 5-million range whose disease can&#39;t be entered into the form the App Store category provides.</p>
+          <p>The schema problem is the load-bearing architectural decision the category has shared for fifteen years. It is the reason 1★ reviews from chronic and vestibular sufferers describe the same complaint with the same words across every major incumbent: &quot;I can&#39;t enter what I have.&quot;</p>
+        </article>
+        <aside class="mid-article-cta">
+          <p class="mid-article-cta__eyebrow">Get Postdrome</p>
+          <p class="mid-article-cta__headline">Postdrome models migraine as a continuous timeline. Discrete attacks are a special case, not the only case.</p>
+          <p class="mid-article-cta__body">$14.99 once for Pro. Free core experience including the neurology-ready PDF. Coming to iPhone. Built for the cohort the App Store category has been excluding by schema for fifteen years.</p>
+          <a class="button button-primary button-large mid-article-cta__cta" href="#subscribe">Email me when it&#39;s ready</a>
+        </aside>
+        <article class="content-panel">
+          <h2>What the audience actually says</h2>
+          <p>The schema problem is audible in the App Store reviews and in the relevant subreddits, often phrased the same way across very different products.</p>
+          <p>*&quot;I suffer from newly diagnosed vestibular migraines. I don&#39;t have &#39;attacks.&#39; My symptoms are constant and ebb and flow throughout the day.&quot;*, 1★ review of one of the largest migraine trackers, US App Store.</p>
+          <p>*&quot;My headaches are three days long. I can&#39;t seem to select this. Also I would like to track the kind of headaches I&#39;m getting. Some are classical migraines, some start in the middle of the night, some are neck related.&quot;*, 2★ review of a different incumbent.</p>
+          <p>*&quot;The app only allows you to track 1 migraine per day! This is pointless! Many who suffer, suffer with more than one a day!&quot;*, 1★ review.</p>
+          <p>*&quot;Anyone else use [tracker] but found it unhelpful? My migraines are chronic so it&#39;s difficult to tell when one ends and another begins.&quot;*, r/migraine, recent thread.</p>
+          <p>*&quot;I have CONSTANT dizziness, severe head pressure &amp; pain, ringing tinnitus, pulsatile tinnitus in one ear, weird visual symptoms.&quot;*, r/VestibularMigraines, &quot;Can it be constant?&quot;</p>
+          <p>These aren&#39;t niche complaints. The pattern is consistent enough across review corpora and subreddit threads that you could write a single line as the canonical user voice: *the form doesn&#39;t fit my disease.* That line surfaces in different words across thousands of reviews. The category has heard it for over a decade. The schema hasn&#39;t moved.</p>
+        </article>
+        <article class="content-panel">
+          <h2>Why the schema persists</h2>
+          <p>The discrete-attack schema persists for two honest reasons, neither of which is malice or laziness.</p>
+          <p>The first is data-model gravity. The schema was set in the original Migraine Buddy launch in 2014 and hardened through a decade of migrations, integrations, and user-data lock-in. Retrofitting a continuous-symptom timeline into a database designed around discrete-attack rows means re-architecting the storage layer, breaking the existing user base&#39;s import paths, and reopening every downstream feature (analytics, exports, clinician views) for revalidation. For a vendor at scale, that&#39;s not a feature; that&#39;s a rewrite. The economic incentive is to keep the schema and tell the chronic and vestibular cohort to use a workaround.</p>
+          <p>The second is buyer-segment economics. Episodic migraine is the dominant phenotype, and the buyer at scale optimizes for the dominant cohort. The chronic + vestibular segment is roughly 20-30% of the total migraineur population but produces a disproportionate share of negative reviews when the schema doesn&#39;t fit them. The math, from a vendor optimizing for App Store rating average, is to ignore the negative reviews from the segment that&#39;s structurally hardest to serve. They&#39;ll churn anyway. The dominant cohort stays, the rating stays in the 4.5+ range, and the schema doesn&#39;t move.</p>
+          <p>This is the structural reason a tracker built specifically around the continuous-symptom timeline can exist as a competitive position. Not because the incumbents are blind to the gap. Because the gap is the cost of the choice they made fifteen years ago, and that cost is a population the App Store category has trained itself not to look at.</p>
+        </article>
+        <article class="content-panel">
+          <h2>What a tracker built for the continuous-symptom timeline actually looks like</h2>
+          <p>Naming the schema problem implies a specification. Three structural needs flow from the diagnosis.</p>
+          <p>First, the data model has to be a continuous timeline, with discrete attacks as a special case rather than the foundational unit. Symptoms log as intensity dimensions across rolling time, not as rows with start and end timestamps. The chronic patient who&#39;s at low-grade dizziness for fourteen days and ictal headache pain for six of those days has a real, representable experience in this model. The episodic patient still has a clean attack-shaped record, because a discrete attack is just a continuous timeline with sharp edges. The schema generalizes; the discrete-attack schema doesn&#39;t.</p>
+          <p>Second, the symptom dimensions have to be independent. Headache pain, vestibular symptoms, photophobia, brain fog, mood disruption, and neck stiffness are six different phenomena that overlap in irregular patterns. A schema that treats them as a single severity slider compresses out the information that makes the disease readable. A schema that treats them as independent intensity timelines makes the cascade visible, and the cascade is what the chronic and vestibular cohort live in.</p>
+          <p>Third, the trigger correlation has to model multi-day windows. A vestibular flare on Tuesday that disrupts sleep on Wednesday and triggers an ictal attack on Thursday is a known cascade pattern in the literature. Same-day correlation can&#39;t see it. Multi-day cascading correlation can. The trackers that only correlate today&#39;s triggers to today&#39;s attack are missing the most clinically interesting pattern in the chronic phenotype, which is that yesterday&#39;s incomplete recovery is today&#39;s trigger.</p>
+          <p>Three structural needs. None of them are postdrome-specific or vestibular-specific in their architecture; they&#39;re properties of a tracker built around the disease as it actually presents in the patient population it currently excludes.</p>
+        </article>
+        <article class="content-panel">
+          <h2>What we built, and the cohort the schema was designed for</h2>
+          <p>Postdrome is the tracker we built around the continuous-symptom timeline. The data model is a rolling timeline of independent intensity dimensions: headache pain, vestibular symptoms, residual photophobia, brain fog, neck stiffness, mood disruption. Discrete attacks are a special case the schema handles natively. Continuous symptoms are first-class.</p>
+          <p>The cohort the schema was designed for: the chronic migraineur whose Tuesday afternoon doesn&#39;t have an end-of-attack timestamp; the vestibular migraineur with months of low-grade dizziness; the postdrome-dominant patient whose work weeks are decided by the after-phase; the CGRP-on-but-not-cured patient whose attack frequency dropped and whose between-attack symptom load didn&#39;t.</p>
+          <p>The cohort the schema also serves: the episodic migraineur with clean discrete attacks. A continuous-symptom timeline with sharp edges represents a discrete attack natively. The episodic patient gets the same UX they&#39;re used to; nothing in the chronic-and-vestibular accommodation costs them anything.</p>
+          <p>The pricing posture matches the schema posture. Postdrome is free for the core experience: timeline, attack logging, symptom dimensions, neurology-ready PDF export. The Pro tier (a one-time $14.99, no subscription, ever) unlocks Watch sync, cross-device sync, and the formal templates for insurance prior-auth and disability claim documentation. Subscription was never on the table because the architecture doesn&#39;t justify it: your data lives in your iCloud, not on our servers, and our marginal cost per user is near zero.</p>
+          <p>None of that fixes the underlying disease. What it fixes is the alignment between what migraine actually is for the chronic and vestibular cohort and what your tracker is willing to admit about it.</p>
+        </article>
+        <article class="content-panel">
+          <h2>Three questions to ask your current tracker today</h2>
+          <p>If this analysis lands and you want to test it against the tracker on your phone right now, three concrete tests.</p>
+          <ol>
+            <li><strong>Try to log a migraine that hasn&#39;t ended.</strong> Open your tracker, start a new entry, and try to save it without an end timestamp. If the form requires a value or auto-populates one, the schema doesn&#39;t fit your disease.</li>
+            <li><strong>Try to log low-grade vestibular symptoms across fourteen days that include three discrete ictal flares.</strong> If the tracker can&#39;t represent the continuous low-grade baseline as a separate dimension from the flares, it&#39;s compressing your disease into the model it was designed for.</li>
+            <li><strong>Try to surface a multi-day cascade pattern.</strong> Ask whether your tracker correlates yesterday&#39;s incomplete recovery to today&#39;s attack frequency. If the only correlation it offers is same-day trigger to same-day attack, it can&#39;t see the pattern that defines the chronic phenotype.</li>
+          </ol>
+          <p>Three tests. If any of them fails, the tracker is fitting the form to one phenotype and asking the rest of us to translate. The disease is what it is. The schema is what we choose to admit about it.</p>
+        </article>
+        </div>
+      </section>
+      <section class="section capture-section" id="subscribe">
+        <div class="container">
+          <div class="capture-panel">
+            <h2 class="capture-panel__headline">Get notified when Postdrome ships</h2>
+            <p class="capture-panel__body">Postdrome is coming to iPhone. We&#39;ll email you the day it launches, with the lifetime price locked in for waitlist members.</p>
+            <form class="capture-form" data-app="postdrome" data-source="vestibular-schema-problem" data-success="You&#39;re on the waitlist. We&#39;ll be in touch." novalidate>
+              <label class="capture-form__label" for="capture-vestibular-schema-problem">Email</label>
+              <input class="capture-form__input" id="capture-vestibular-schema-problem" name="email" type="email" required autocomplete="email" placeholder="you@email.com" />
+              <button class="button button-primary button-large capture-form__submit" type="submit">Email me when it&#39;s ready</button>
+            </form>
+            <p class="capture-form__result" aria-live="polite"></p>
+            <p class="capture-form__privacy">No spam. Unsubscribe anytime. Replies go to support@sailquery.com.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+        <a class="brand" href="/">
+          <img src="/assets/postdrome-logo-horizontal.png" alt="Postdrome" class="brand-logo footer-logo" />
+        </a>
+          <p class="footer-copy">Track what your migraine actually does to your week.</p>
+          <p class="footer-us">Built in the US. Health data stays in your iCloud.</p>
+        </div>
+        <div>
+          <h3>Product</h3>
+          <ul>
+            <li><a href="/#how-it-works">How it Works</a></li>
+            <li><a href="/#pricing">Pricing</a></li>
+            <li><a href="/#download">Download</a></li>
+            <li><a href="/articles/">Articles</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Company</h3>
+          <ul>
+            <li><a href="mailto:support@sailquery.com">Contact</a></li>
+            <li><a href="/support/">Support</a></li>
+            <li><a href="/legal/privacy.html">Privacy</a></li>
+            <li><a href="/legal/terms.html">Terms</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <script defer src="/script.js"></script>
+  <script>
+    (function () {
+      var forms = document.querySelectorAll('form.capture-form');
+      if (!forms.length) return;
+      forms.forEach(function (form) {
+        form.addEventListener('submit', function (e) {
+          e.preventDefault();
+          var input = form.querySelector('input[name="email"]');
+          var btn = form.querySelector('button[type="submit"]');
+          var result = form.parentElement.querySelector('.capture-form__result');
+          var email = (input.value || '').trim();
+          if (!email) return;
+          btn.disabled = true;
+          result.textContent = 'Sending…';
+          result.className = 'capture-form__result';
+          fetch('/api/subscribe', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email: email, source: form.dataset.source || '' })
+          }).then(function (res) {
+            if (!res.ok && res.status !== 200) throw new Error(String(res.status));
+            return res.json().catch(function () { return {}; });
+          }).then(function () {
+            result.textContent = form.dataset.success || "You're in.";
+            result.className = 'capture-form__result capture-form__result--success';
+            form.reset();
+          }).catch(function () {
+            result.textContent = 'Something went wrong. Try again or email support@sailquery.com.';
+            result.className = 'capture-form__result capture-form__result--error';
+          }).finally(function () {
+            btn.disabled = false;
+          });
+        });
+      });
+    })();
+  </script>
+</body>
+</html>
