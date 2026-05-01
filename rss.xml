@@ -5,9 +5,17 @@
     <link>https://postdrome.app/articles/</link>
     <description>Track what your migraine actually does to your week.</description>
     <language>en-US</language>
-    <lastBuildDate>Fri, 01 May 2026 16:01:43 GMT</lastBuildDate>
+    <lastBuildDate>Fri, 01 May 2026 16:04:16 GMT</lastBuildDate>
     <managingEditor>support@sailquery.com (Postdrome)</managingEditor>
     <atom:link href="https://postdrome.app/rss.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>If your migraines don&apos;t end, the tracker can&apos;t represent you.</title>
+      <link>https://postdrome.app/articles/the-vestibular-migraine-schema-problem/</link>
+      <guid isPermaLink="true">https://postdrome.app/articles/the-vestibular-migraine-schema-problem/</guid>
+      <pubDate>Fri, 01 May 2026 16:01:56 GMT</pubDate>
+      <description>If your migraines don&apos;t end, your tracker doesn&apos;t know what to do with you. The data model in every major incumbent assumes a discrete attack with a start time and an end time. The chronic and vestibular cohort, roughly 5.5 million Americans, has been excluded from category tooling for fifteen years by a schema choice nobody calls a schema choice.</description>
+      <category>Category Analysis</category>
+    </item>
     <item>
       <title>Most migraine apps stop tracking the moment the headache stops.</title>
       <link>https://postdrome.app/articles/what-every-migraine-app-gets-wrong-about-postdrome/</link>
