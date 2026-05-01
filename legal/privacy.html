@@ -33,10 +33,10 @@
   <p>
   <ul style="margin-bottom: 24px; line-height: 1.8;">
     <li>Your symptom logs, medications, voice memos, and personal notes <strong>stay on your device</strong> (and, if you opt in to Pro, sync via your own iCloud — Apple's CloudKit, not us).</li>
-    <li>We <strong>never receive your health data</strong>. Our backend stores only a anonymous user ID, your Pro purchase status, and an optional email if you check the "send me product updates" box.</li>
+    <li>We <strong>never receive your health data</strong>. Our backend stores only an anonymous user ID, your Pro purchase status, and an optional email if you check the "send me product updates" box.</li>
     <li>Voice memos are transcribed <strong>on-device only</strong>. Your audio never leaves your phone.</li>
     <li>We don't sell anything to advertisers, brokers, pharma, or anyone else. We don't show ads. We don't run any analytics inside the app.</li>
-    <li>If you delete the app or your iCloud, your data is gone.</li>
+    <li>If you delete the app, the on-device copy is gone. To wipe the iCloud copy too, use <strong>Settings &rarr; Data &rarr; Delete all postdrome data</strong> inside the app — that handles both at once.</li>
   </ul>
 
   <h2>What we collect (the entire list)</h2>
@@ -73,7 +73,7 @@
   <p>When you record a voice memo in Aura Mode, the audio is saved as an .m4a file in the app's local Documents directory. Speech transcription runs entirely on-device using Apple's <code>SFSpeechRecognizer</code> with the on-device-only flag explicitly required. If on-device speech is unavailable on your device, the feature simply fails — we will never fall back to server-side recognition for health data.</p>
 
   <h2>Sentry crash reports</h2>
-  <p>For crash reporting, we use Sentry. When the app crashes, Sentry sends Apple-provided crash info (stack trace, device model, iOS version, anonymous installation ID) to Sentry's servers. <strong>No symptom logs, medication records, voice memos, or personal notes are ever included in crash reports.</strong> Disable by deleting the app or filing a support request.</p>
+  <p>For crash reporting, we use Sentry. When the app crashes, Sentry sends Apple-provided crash info (stack trace, device model, iOS version) to Sentry's servers. If you've signed in with Apple by the time of the crash, the report also includes the same anonymous user ID we use in our own backend (a stable identifier issued by Apple's Sign in with Apple — it cannot be reverse-engineered to your real Apple ID). <strong>No symptom logs, medication records, voice memos, personal notes, or location data are ever included in crash reports.</strong> Disable by deleting the app or filing a support request.</p>
 
   <h2>Anonymous landing-page analytics (this website only)</h2>
   <p>This marketing website (postdrome.app) uses PostHog to count visits and understand which pages get read. Only this website — never the app. Standard cookie + anonymous-ID analytics.</p>

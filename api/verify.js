@@ -16,11 +16,51 @@
 //       time with the hash + a timestamp. Verification then says "yes,
 //       this hash was generated on [date]." Only metadata, no health data.
 //
-// The honest framing is in the response: tamper-evident at the format
-// level, not "we vouched for this clinically." We never claim medical
-// authority for the document.
+// Rate limiting: in-process Map, sliding 60s window, 10 req/min per IP per
+// instance. Vercel functions can scale to multiple instances (so cap is
+// per-instance, not global) and instances cycle on cold start (so a
+// determined attacker can re-roll). For v1.0 with a regex-only handler
+// behind Vercel's platform DDoS protection, this is enough — the
+// endpoint has no DB, no cost, and no upstream system to overload. v1.1
+// (when registry lookup lands) should upgrade to @upstash/ratelimit on
+// Vercel KV for cross-instance state.
+
+const RATE_LIMIT_WINDOW_MS = 60_000;
+const RATE_LIMIT_MAX = 10;
+const ipBuckets = new Map(); // ip -> [timestamps]
+
+function clientIP(req) {
+  const fwd = req.headers['x-forwarded-for'];
+  if (typeof fwd === 'string' && fwd.length > 0) {
+    return fwd.split(',')[0].trim();
+  }
+  return req.headers['x-real-ip'] || req.socket?.remoteAddress || 'unknown';
+}
+
+function rateLimited(ip) {
+  const now = Date.now();
+  const cutoff = now - RATE_LIMIT_WINDOW_MS;
+  const recent = (ipBuckets.get(ip) || []).filter((t) => t > cutoff);
+  if (recent.length >= RATE_LIMIT_MAX) {
+    ipBuckets.set(ip, recent);
+    return true;
+  }
+  recent.push(now);
+  ipBuckets.set(ip, recent);
+  return false;
+}
 
 export default function handler(req, res) {
+  const ip = clientIP(req);
+  if (rateLimited(ip)) {
+    res.setHeader('Retry-After', '60');
+    res.setHeader('Content-Type', 'text/html; charset=utf-8');
+    return res.status(429).send(renderPage({
+      title: 'Slow down',
+      body: '<p>Too many verification attempts in the last minute. Try again in a moment.</p><p><a href="/api/verify">Back to verify</a></p>',
+    }));
+  }
+
   const hash = req.query.hash || req.query.h || '';
   const cleaned = String(hash).trim().toLowerCase();
 
